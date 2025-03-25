@@ -1,12 +1,14 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import * as authService from '../../services/authService'
+import * as authService from '../../services/authService';
+import './SignupForm.css'; // Make sure to create a CSS file for styling
 
 const SignupForm = (props) => {
   const navigate = useNavigate();
   const [message, setMessage] = useState(['']);
   const [formData, setFormData] = useState({
     username: '',
+    email: '', 
     password: '',
     passwordConf: '',
   });
@@ -20,38 +22,48 @@ const SignupForm = (props) => {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
     try {
-      const newUserResponse = await authService.signup(formData)
+      const newUserResponse = await authService.signup(formData);
       props.setUser(newUserResponse.user);
-      navigate('/')
+      navigate('/');
     } catch (err) {
-      updateMessage(err.message)
+      updateMessage(err.message);
     }
-  }
+  };
 
-  const { username, password, passwordConf } = formData;
+  const { username, email, password, passwordConf } = formData;
 
   const isFormInvalid = () => {
-    return !(username && password && password === passwordConf);
+    return !(username && email && password && password === passwordConf);
   };
 
   return (
-    <main>
+    <main className="signup-form">
       <h1>Sign Up</h1>
-      <p>{message}</p>
+      <p className="error-message">{message}</p>
       <form onSubmit={handleSubmit}>
-        <div>
+        <div className="form-group">
           <label htmlFor="username">Username:</label>
           <input
             type="text"
-            id="name"
+            id="username"
             value={username}
             name="username"
             onChange={handleChange}
           />
         </div>
-        <div>
+        <div className="form-group">
+          <label htmlFor="email">Email:</label>
+          <input
+            type="email"
+            id="email"
+            value={email}
+            name="email"
+            onChange={handleChange}
+          />
+        </div>
+        <div className="form-group">
           <label htmlFor="password">Password:</label>
           <input
             type="password"
@@ -61,7 +73,7 @@ const SignupForm = (props) => {
             onChange={handleChange}
           />
         </div>
-        <div>
+        <div className="form-group">
           <label htmlFor="confirm">Confirm Password:</label>
           <input
             type="password"
@@ -71,11 +83,9 @@ const SignupForm = (props) => {
             onChange={handleChange}
           />
         </div>
-        <div>
-          <button disabled={isFormInvalid()}>Sign Up</button>
-          <Link to="/">
-            <button>Cancel</button>
-          </Link>
+        <div className="form-actions">
+          <button disabled={isFormInvalid()} className="submit-button">Sign Up</button>
+          <Link to="/" className="cancel-button">Cancel</Link>
         </div>
       </form>
     </main>

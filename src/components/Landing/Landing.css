@@ -1,0 +1,101 @@
+/* Landing.css */
+.landing-container {
+    font-family: Arial, sans-serif;
+    color: #333;
+  }
+  
+  /* Header with background image */
+  .header {
+    background: url('https://www.travelandtourworld.com/wp-content/uploads/2024/06/Travel-2-2.jpg') no-repeat center center/cover;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .header-overlay {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+  }
+  
+  .header h1 {
+    font-size: 3rem;
+    margin: 0;
+  }
+  
+  .header p {
+    font-size: 1.2rem;
+  }
+  
+  /* Gulf Countries */
+  .countries {
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  .countries-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 0;
+  }
+  
+  .countries-list li {
+    font-size: 1.1rem;
+    font-weight: bold;
+  }
+  
+  /* Services Section */
+  .services {
+    background-color: #f8f8f8;
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  .service-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+  
+  .service-card {
+    background: #fff;
+    padding: 20px;
+    width: 250px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  
+  /* Tours Section */
+  .tours {
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  .tour-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+  
+  .tour-card {
+    background: #fff;
+    padding: 20px;
+    width: 200px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  
+  .tour-card img {
+    width: 100%;
+    border-radius: 8px;
+  }
+  

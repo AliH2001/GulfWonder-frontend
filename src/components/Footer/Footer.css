@@ -1,0 +1,74 @@
+.footer {
+  background-color: #004d40; /* Gulf Wonder's branding */
+  color: #ffffff;
+  padding: 20px;
+}
+
+.footer-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-logo {
+  flex: 1; /* Ensure the logo stays on the left */
+}
+
+.logo-image1 {
+  max-width: 150px;
+  height: auto;
+}
+
+.footer-nav {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-nav ul li a {
+  text-decoration: none;
+  color: #b3e5fc;
+  transition: color 0.3s ease-in-out;
+}
+
+.footer-nav ul li a:hover {
+  color: #ffffff;
+}
+
+.footer-contact {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.9rem;
+}
+
+.footer-contact a {
+  text-decoration: underline;
+  color: #b3e5fc;
+}
+
+.footer-contact a:hover {
+  color: #ffffff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-logo,
+  .footer-nav {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+}
