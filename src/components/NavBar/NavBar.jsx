@@ -28,7 +28,6 @@ const NavBar = ({ user, handleSignout }) => {
             {user && user.role === "admin" && (
               <>
                 <Link to="/places/new">Add Place</Link>
-                <Link to="/places/:placeId/edit">Edit Place</Link>
               </>
             )}
             {user ? (

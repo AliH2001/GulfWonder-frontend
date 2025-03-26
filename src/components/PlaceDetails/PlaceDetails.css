@@ -72,25 +72,25 @@
     margin-top: 10px;
   }
   
-  .comments-section {
+  .reviews-section {
     background: #f4dada;
     padding: 15px;
     border-radius: 10px;
     margin-top: 20px;
   }
   
-  .comments-section h2 {
+  .reviews-section h2 {
     font-size: 20px;
     color: #333;
   }
   
-  .comment-form {
+  .review-form {
     display: flex;
     align-items: center;
     margin-top: 10px;
   }
   
-  .comment-form input {
+  .review-form input {
     flex-grow: 1;
     padding: 8px;
     border: 1px solid #ccc;
@@ -98,7 +98,7 @@
     margin-right: 10px;
   }
   
-  .comment-form button {
+  .review-form button {
     background-color: #0073e6;
     color: white;
     border: none;
@@ -107,15 +107,15 @@
     cursor: pointer;
   }
   
-  .comment-form button:hover {
+  .review-form button:hover {
     background-color: #005bb5;
   }
   
-  .comments-container {
+  .reviews-container {
     margin-top: 10px;
   }
   
-  .comment-card {
+  .review-card {
     background: white;
     padding: 10px;
     border-radius: 5px;
@@ -123,20 +123,20 @@
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
   }
   
-  .comment-header {
+  .review-header {
     display: flex;
     justify-content: space-between;
     font-size: 14px;
     color: #666;
   }
   
-  .comment-rating {
+  .review-rating {
     font-size: 16px;
     color: #FFD700;
     margin-top: 5px;
   }
   
-  .comment-text {
+  .review-text {
     font-size: 14px;
     color: #333;
     margin-top: 5px;

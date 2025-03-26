@@ -78,13 +78,13 @@ const App = () => {
         {user ? (
           <>
             <Route path="/" element={<Landing user={user} />} />
-            <Route path="/places/:placeId" element={<PlaceDetails />} />
+            <Route path="/places/:placeId" element={<PlaceDetails user={user} />} />
             {/* <Route path="/places" element={<PlaceList places={places}/>} /> */}
             <Route path="/about" element={<About />} />/
             {user.role === 'admin' && (
               <>
-                <Route path="/places/new"element={<PlaceForm handleAddPlace={handleAddPlace} />}/>
-                <Route path="/places/:placeId/edit"element={<PlaceForm handleUpdatePlace={handleUpdatePlace} />}/>
+                <Route path="/places/new" element={<PlaceForm handleAddPlace={handleAddPlace} />}/>
+                <Route path="/places/:placeId/edit" element={<PlaceForm handleUpdatePlace={handleUpdatePlace} />}/>
                 {/* <Route path="/places" element={<PlaceList  />} /> */}
               </>
             )}
