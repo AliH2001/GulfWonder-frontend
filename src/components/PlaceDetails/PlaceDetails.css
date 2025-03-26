@@ -1,0 +1,144 @@
+.place-details {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .place-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 3px solid #003366;
+  }
+  
+  .details-box {
+    background-color: #f4dada;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 10px;
+  }
+  
+  h1 {
+    font-size: 24px;
+    color: #222;
+  }
+  
+  p {
+    font-size: 16px;
+    color: #555;
+    margin: 5px 0;
+  }
+  
+  strong {
+    color: #222;
+  }
+  
+  .booking-box {
+    background: #f4dada;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .booking-box input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .booking-box button {
+    width: 100%;
+    background-color: #003366;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .booking-box button:hover {
+    background-color: #001f4d;
+  }
+  
+  .total-price {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  .comments-section {
+    background: #f4dada;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 20px;
+  }
+  
+  .comments-section h2 {
+    font-size: 20px;
+    color: #333;
+  }
+  
+  .comment-form {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .comment-form input {
+    flex-grow: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+  
+  .comment-form button {
+    background-color: #0073e6;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .comment-form button:hover {
+    background-color: #005bb5;
+  }
+  
+  .comments-container {
+    margin-top: 10px;
+  }
+  
+  .comment-card {
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .comment-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .comment-rating {
+    font-size: 16px;
+    color: #FFD700;
+    margin-top: 5px;
+  }
+  
+  .comment-text {
+    font-size: 14px;
+    color: #333;
+    margin-top: 5px;
+  }
+  

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import * as authService from '../../services/authService';
-import './SignupForm.css'; // Make sure to create a CSS file for styling
+import './SignupForm.css'; 
 
 const SignupForm = (props) => {
   const navigate = useNavigate();

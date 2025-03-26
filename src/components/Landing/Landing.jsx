@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import './Landing.css';
-import * as placeService from '../../services/placeService'; // Import the placeService
+import * as placeService from '../../services/placeService'; 
 
 const Landing = () => {
-  const [places, setPlaces] = useState([]); // State to hold the places data
+  const [places, setPlaces] = useState([]); 
 
   useEffect(() => {
     const fetchPlaces = async () => {
       try {
-        const fetchedPlaces = await placeService.index(); // Fetch all places using the index function
-        setPlaces(fetchedPlaces); // Update the state with the fetched data
+        const fetchedPlaces = await placeService.index();
+        setPlaces(fetchedPlaces); 
       } catch (error) {
         console.error('Error fetching places:', error);
       }

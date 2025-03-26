@@ -102,6 +102,19 @@ const PlaceForm = (props) => {
             </div>
           </div>
 
+          <div className="form-row">
+              <label className="form-label" htmlFor="price-input">Price</label>
+              <input 
+                required 
+                type="number" 
+                name="price" 
+                id="price-input" 
+                className="form-input" 
+                value={formData.price} 
+                onChange={handleChange} 
+              />
+            </div>
+
           <div className="form-column">
             <div className="form-row">
               <label className="form-label" htmlFor="description-input">Description</label>

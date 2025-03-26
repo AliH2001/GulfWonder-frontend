@@ -23,6 +23,8 @@ const NavBar = ({ user, handleSignout }) => {
           {/* Desktop Menu */}
           <div className={`menu-links ${menuOpen ? "active" : ""}`}>
             <Link to="/">Home</Link>
+            <Link to="/about">About</Link>
+            <Link to="/places">Places</Link> 
             {user && user.role === "admin" && (
               <>
                 <Link to="/places/new">Add Place</Link>
