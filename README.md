@@ -39,16 +39,10 @@
 ### **Add Places Page (Admin)**  
 ![alt text](image-5.png)
 
-### **Sign Up & Sign In Pages**  
-![Sign Up](#) | ![Sign In](#)  
+### **Places Details Page (User)**  
+![alt text](image-7.png)
 
-### **Booking Page**  
-![Booking](#)  
 
-### **User Dashboard**  
-![Dashboard](#)  
-
----
 
 ## Next Steps:  
 🚀 Implement a **search functionality** for tourist spots.  
