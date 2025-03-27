@@ -26,14 +26,18 @@
 ![alt text](<Home 1.jpg>)
 ![alt text](image-1.png)
 ![alt text](image-2.png)
-### **Landing Page**  
-![Landing Page](#)  
 
-### **Tourist Spots List**  
-![Tourist Spots](#)  
+### **About Page**  
+![alt text](image-3.png)  
 
-### **Tour Details Page**  
-![Tour Details](#)  
+### **Places Page**  
+![alt text](image-4.png)
+
+### **Places Details Page (Admin)**  
+![alt text](image-6.png) 
+
+### **Add Places Page (Admin)**  
+![alt text](image-5.png)
 
 ### **Sign Up & Sign In Pages**  
 ![Sign Up](#) | ![Sign In](#)  
