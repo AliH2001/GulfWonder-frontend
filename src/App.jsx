@@ -2,25 +2,18 @@ import { useState, useEffect } from 'react';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import NavBar from './components/NavBar/NavBar';
 import Landing from './components/Landing/Landing';
-import Dashboard from './components/Dashboard/Dashboard';
 import SignupForm from './components/SignupForm/SignupForm';
 import SigninForm from './components/SigninForm/SigninForm';
 import Footer from './components/Footer/Footer';
-
-//services
 import * as authService from './services/authService';
 import * as placeService from './services/placeService';
-
-//COMPONENTS
 import PlaceCard from './components/PlaceCard/PlaceCard';
 import PlaceList from './components/PlaceList/PlaceList';
 import PlaceForm from './components/PlaceForm/PlaceForm';
 import PlaceDetails from './components/PlaceDetails/PlaceDetails';
 import About from './components/About/About';
-
-
-
-// export const AuthedUserContext = createContext(null);
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser());
@@ -30,75 +23,64 @@ const App = () => {
   useEffect(() => {
     const fetchAllPlaces = async () => {
       const placesData = await placeService.index();
-      
-      setPlaces(placesData)
-     
-
-    }
-
-    if (user) fetchAllPlaces()
-
-    
+      setPlaces(placesData);
+    };
+    if (user) fetchAllPlaces();
   }, [user]);
 
   const handleSignout = () => {
     authService.signout();
     setUser(null);
+    navigate('/');
   };
 
   const handleAddPlace = async (placeFormData) => {
-      const newPlace = await placeService.create(placeFormData);
-      const newPlaceList = [ newPlace, ...places ];
-      setPlaces([newPlace, ...places]); 
-      navigate(`/places`);
-  };
-
-
-  const handleUpdatePlace = async (placeId, placeFormData) => {
-  const updatedPlace = await placeService .update(placeId, placeFormData);
-  console.log(updatedPlace);
-  setPlaces(places.map((place) => (placeId === place._id ? updatedPlace : place)));
-  navigate(`/places/${placeId}`);
-};
-
-
-  const handleDeletePlace = async (placeId) => {
-    const deletedPlace = await placeService.deletePlace(placeId);
-    setPlaces(places.filter(place => place._id !== deletedplace._id));
+    const newPlace = await placeService.create(placeFormData);
+    setPlaces(prev => [newPlace, ...prev]);
     navigate('/places');
   };
 
+  const handleUpdatePlace = async (placeId, placeFormData) => {
+    const updatedPlace = await placeService.update(placeId, placeFormData);
+    setPlaces(prev => prev.map(place => 
+      place._id === placeId ? updatedPlace : place
+    ));
+    navigate(`/places/${placeId}`);
+  };
+
+  const handleDeletePlace = async (placeId) => {
+    await placeService.deletePlace(placeId);
+    setPlaces(prev => prev.filter(place => place._id !== placeId));
+    navigate('/places');
+  };
 
   return (
     <>
-      {/* <AuthedUserContext.Provider value={user}> */}
       <NavBar user={user} handleSignout={handleSignout} />
       <Routes>
-      <Route path="/places" element={<PlaceList places={places}/>} />
+
+        <Route path="/" element={<Landing user={user} />} />
+        <Route path="/about" element={<About />} />
+
         {user ? (
           <>
-            <Route path="/" element={<Landing user={user} />} />
-            <Route path="/places/:placeId" element={<PlaceDetails user={user} />} />
-            {/* <Route path="/places" element={<PlaceList places={places}/>} /> */}
-            <Route path="/about" element={<About />} />/
+            <Route path="/places" element={<PlaceList places={places} />} />
+            <Route path="/places/:placeId" element={<PlaceDetails user={user} handleDeletePlace={handleDeletePlace} />} />
             {user.role === 'admin' && (
               <>
-                <Route path="/places/new" element={<PlaceForm handleAddPlace={handleAddPlace} />}/>
-                <Route path="/places/:placeId/edit" element={<PlaceForm handleUpdatePlace={handleUpdatePlace} />}/>
-                {/* <Route path="/places" element={<PlaceList  />} /> */}
+                <Route path="/places/new" element={<PlaceForm handleAddPlace={handleAddPlace} />} />
+                <Route path="/places/:placeId/edit" element={<PlaceForm handleUpdatePlace={handleUpdatePlace} />} />
               </>
             )}
           </>
         ) : (
-
-          <>
-            <Route path="/" element={<Landing />} />
-          </>
+          <Route path="/places" element={<Landing user={user} />} />
         )}
-         <Route path="/signup" element={<SignupForm setUser={setUser} />} />
-         <Route path="/signin" element={<SigninForm setUser={setUser} />} />
+
+        {/* Auth Routes */}
+        <Route path="/signup" element={<SignupForm setUser={setUser} />} />
+        <Route path="/signin" element={<SigninForm setUser={setUser} />} />
       </Routes>
-      {/* </AuthedUserContext.Provider> */}
       <Footer />
     </>
   );

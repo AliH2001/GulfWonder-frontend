@@ -1,61 +1,73 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom"; // Import Link from React Router
+import { Link } from "react-router-dom";
 import "./NavBar.css";
 import Logo from "../../assets/NavBar.png";
 
 const NavBar = ({ user, handleSignout }) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
-
   return (
-    <header>
-      <nav className="navbar">
-        <div className="container">
-          {/* Logo */}
-          <div className="logo">
-            <Link to="/">
-              <img src={Logo} alt="Logo" className="logo-image" />
+    <nav className="navbar navbar-expand-lg navbar-light navbar-custom">
+    <div className="container">
+
+      <Link className="navbar-brand" to="/">
+        <img src={Logo} height="50" alt="Gulf Wonder Logo" loading="lazy" />
+      </Link>
+  
+
+      <button
+        className="navbar-toggler"
+        type="button"
+        onClick={() => setMenuOpen(!menuOpen)}
+        aria-expanded={menuOpen}
+      >
+        <span className="navbar-toggler-icon"></span>
+      </button>
+  
+      <div className={`collapse navbar-collapse ${menuOpen ? "show" : ""}`}>
+
+        <ul className="navbar-nav me-auto">
+          <li className="nav-item">
+            <Link className="nav-link" to="/">Home</Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/about">About</Link>
+          </li>
+          {user && (
+            <li className="nav-item">
+              <Link className="nav-link" to="/places">Places</Link>
+            </li>
+          )}
+          {user && user.role === "admin" && (
+            <li className="nav-item">
+              <Link className="nav-link" to="/places/new">Add Place</Link>
+            </li>
+          )}
+        </ul>
+  
+        <div className="d-flex align-items-center">
+          {user ? (
+            <button className="btn btn-danger ms-3" onClick={handleSignout}>
+              Sign Out
+            </button>
+          ) : (
+            <div className="d-flex align-items-center">
+            <Link to="/signin">
+              <button className="btn btn-success ms-3">
+                Sign In
+              </button>
+            </Link>
+            <Link to="/signup">
+              <button className="btn btn-dark ms-3">
+                Sign Up
+              </button>
             </Link>
           </div>
-          {/* Desktop Menu */}
-          <div className={`menu-links ${menuOpen ? "active" : ""}`}>
-            <Link to="/">Home</Link>
-            <Link to="/about">About</Link>
-            <Link to="/places">Places</Link> 
-            {user && user.role === "admin" && (
-              <>
-                <Link to="/places/new">Add Place</Link>
-              </>
-            )}
-            {user ? (
-              <button className="btn-signout" onClick={handleSignout}>
-                Sign Out
-              </button>
-            ) : (
-              <>
-                <Link to="/signin">
-                  <button className="btn-login">Login</button>
-                </Link>
-                <Link to="/signup">
-                  <button className="btn-signup">Sign Up</button>
-                </Link>
-              </>
-            )}
-          </div>
-          {/* Hamburger Icon */}
-          <button className="menu-toggle" onClick={toggleMenu}>
-            <div className={`hamburger ${menuOpen ? "open" : ""}`}>
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-          </button>
+          )}
         </div>
-      </nav>
-    </header>
+      </div>
+    </div>
+  </nav>
   );
 };
 

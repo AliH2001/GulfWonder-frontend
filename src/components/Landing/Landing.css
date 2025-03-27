@@ -1,12 +1,10 @@
-/* Landing.css */
 .landing-container {
     font-family: Arial, sans-serif;
     color: #333;
   }
   
-  /* Header with background image */
   .header {
-    background: url('https://www.travelandtourworld.com/wp-content/uploads/2024/06/Travel-2-2.jpg') no-repeat center center/cover;
+    background: url('https://images.pexels.com/photos/8828442/pexels-photo-8828442.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load') no-repeat  center/cover;
     height: 100vh;
     position: relative;
     display: flex;
@@ -15,7 +13,7 @@
   }
   
   .header-overlay {
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(248, 251, 248, 0.676);
     padding: 20px;
     text-align: center;
     color: #fff;
@@ -30,7 +28,6 @@
     font-size: 1.2rem;
   }
   
-  /* Gulf Countries */
   .countries {
     padding: 40px 20px;
     text-align: center;
@@ -49,7 +46,6 @@
     font-weight: bold;
   }
   
-  /* Services Section */
   .services {
     background-color: #f8f8f8;
     padding: 40px 20px;
@@ -59,20 +55,27 @@
   .service-cards {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 80px;
     flex-wrap: wrap;
     margin-top: 20px;
   }
   
   .service-card {
-    background: #fff;
+    background:#f5f5dc	;
     padding: 20px;
     width: 250px;
     border-radius: 8px;
+    overflow: hidden;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  }
+
+  .service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
   }
   
-  /* Tours Section */
   .tours {
     padding: 40px 20px;
     text-align: center;
@@ -84,14 +87,22 @@
     gap: 20px;
     flex-wrap: wrap;
     margin-top: 20px;
+    
   }
   
   .tour-card {
-    background: #fff;
+    background: #f5f5dc	;
     padding: 20px;
-    width: 200px;
+    width: 250px;
     border-radius: 8px;
+    overflow: hidden;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .tour-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
   }
   
   .tour-card img {
@@ -99,3 +110,32 @@
     border-radius: 8px;
   }
   
+.countries-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 70px; 
+  justify-content: center;
+}
+
+.country-item {
+  text-align: center;
+}
+
+.country-flag {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  
+}
+
+.flag-img {
+  width: 100px;
+  height: 100px;
+  
+}
+
+.countries h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
