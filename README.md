@@ -22,6 +22,8 @@
 ---
 
 ## Screenshots  
+### **Home Page**  
+![alt text](<Home 1.jpg>)
 
 ### **Landing Page**  
 ![Landing Page](#)  
