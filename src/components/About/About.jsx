@@ -4,7 +4,7 @@ const AboutImage = () => {
   return (
     <img className="img-fluid rounded"
       loading="lazy"
-      src="https://files.oaiusercontent.com/file-1nreAkReELqJNBa1FxYV29?se=2025-03-27T03%3A07%3A06Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3Da4c71491-acd5-4aa5-a354-076123f60290.webp&sig=54/2kUQ8q/G0XSNYVo4jYVVBjPck/44bYLI14kF%2B/Is%3D"
+      src="https://images.pexels.com/photos/20875707/pexels-photo-20875707/free-photo-of-word-who-made-of-wooden-letters.jpeg?auto=compress&cs=tinysrgb&w=600"
       alt="About 1"
     />
   );
